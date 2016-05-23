@@ -1,0 +1,13 @@
+{
+  "name": "rock-bot",
+  "description": "The bot that everyone deserves, but not the one it needs right now.",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "engines": {
+    "node": "6.2.0"
+  },
+  "dependencies": {
+    "botkit": "0.1.1"
+  }
+}
