@@ -1,15 +1,17 @@
-if (!process.env.token) {
+require('dotenv').config();
+
+if (!process.env.TOKEN) {
   process.exit(1);
 }
 
 const Botkit = require('botkit');
 
 const controller = Botkit.slackbot({
-  debug: true,
+  debug: false
 });
 
 controller.spawn({
-  token: process.env.token,
+  token: process.env.TOKEN,
 }).startRTM();
 
 const { hears, storage: { channels } } = controller;
@@ -83,7 +85,14 @@ hears(['play'], 'direct_message,direct_mention,mention', (bot, message) => {
   const userData = text.match(/<@([A-Z0-9]{9})>/);
 
   if (userData) {
+
     const playerTwo = userData[1];
+
+    if ( user == playerTwo ) {
+      bot.reply(message, 'Bitch, please! You can\'t challenge yourself!');
+      return false;
+    }
+
     const gameData = {
       id: channel,
       players: {

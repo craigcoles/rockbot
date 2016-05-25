@@ -1,13 +1,14 @@
 {
   "name": "rock-bot",
   "description": "The bot that everyone deserves, but not the one it needs right now.",
-  "scripts": {
-    "start": "node bot.js"
-  },
   "engines": {
     "node": "6.2.0"
   },
+  "scripts": {
+    "start": "node bot.js"
+  },
   "dependencies": {
-    "botkit": "0.1.1"
+    "botkit": "0.2.0",
+    "dotenv": "^2.0.0"
   }
 }
