@@ -1,4 +1,6 @@
-require('dotenv').config();
+if (process.env.ENV == 'dev') {
+    require('dotenv').config();
+}
 
 if (!process.env.TOKEN) {
   process.exit(1);
