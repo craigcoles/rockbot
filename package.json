@@ -5,7 +5,7 @@
     "node": "6.2.0"
   },
   "scripts": {
-    "run": "set ENV=dev & node bot.js"
+    "run": "set ENV=dev & node bot.js",
     "start": "set ENV=live & node bot.js"
   },
   "dependencies": {
